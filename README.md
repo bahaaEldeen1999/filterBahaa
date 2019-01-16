@@ -7,9 +7,9 @@ HOW IT WORKS :
 ```html
 <script src = " src/beFilter.js " > </script>
 ```
-2 - Just call the filter function 
+2 - Just call the beFilter function 
 ```html
-filter( [ ] , ' ' , ' ') : the filter function take 4 parameters : 
+beFilter( [ ] , ' ' , ' ' , ' ' ) : the filter function take 4 parameters : 
 ```
 the first :
 
