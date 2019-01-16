@@ -45,3 +45,6 @@ beFilter( ['filter1','filter2','filter3'] , 'filterAll' , 'fadeIn'  );
 
 </script>
 
+-- this works perfectly with bootstrap 4 and 3 
+--works with the case when you have different position styles to you elements
+
