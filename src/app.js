@@ -1,14 +1,12 @@
-/*
-[]
-
-
-*/ 
 
 function filter(arr, filterAll,animateCss){
     function show(elem,style){
         elem.style.display = "block";
         if( style ){
             elem.classList.add(style);
+            setTimeout(()=>{
+                elem.classList.remove(style);
+            },1000)
            
         }else{
             elem.style.opacity = "1";
@@ -34,7 +32,10 @@ function filter(arr, filterAll,animateCss){
     function hide(elem,style){
         if( style ){
             elem.classList.add(style);        
-                elem.style.display = "none";
+            elem.style.display = "none";
+            setTimeout(()=>{
+                elem.classList.remove(style);
+            },1000)
         }else{
             elem.style.opacity = "0";
                 elem.style.display = "none";
@@ -53,9 +54,11 @@ function filter(arr, filterAll,animateCss){
             }
         }
     }
-    
+    //the filter buttons array
     let buttons = [];
+    //the elements that will be filtered
     let elements = [];
+    //fill in the array and object
     for(let id of arr){
         buttons.push( document.getElementById(id) );
         elements.push(
@@ -65,6 +68,7 @@ function filter(arr, filterAll,animateCss){
            } 
             );
     }
+    //if there is a filter all button give it a show all method
     if(filterAll){
         let filterAllBtn = document.getElementById(filterAll);
         filterAllBtn.addEventListener('click',(e)=>{
@@ -73,7 +77,7 @@ function filter(arr, filterAll,animateCss){
         })
     }
   
-
+    //add the event listner for buttons to filter their specific elements
     for(let button of buttons){
         button.addEventListener('click',(e)=>{
             e.preventDefault();
@@ -92,12 +96,4 @@ function filter(arr, filterAll,animateCss){
 
         });
     }
-
-
-
-
-
-
-
 }
-filter( [ 'filter1','filter2','filter3'], 'filterAll' , 'zoomIn' )
