@@ -6,7 +6,7 @@ function beFilter(arr, filterAll,animateCss){
             elem.classList.add(style);
             setTimeout(()=>{
                 elem.classList.remove(style);
-            },1000)
+             },1000)
            
         }else{
             elem.style.opacity = "1";
