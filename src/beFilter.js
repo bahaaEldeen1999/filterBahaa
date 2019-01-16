@@ -1,5 +1,5 @@
 
-function beFilter(arr, filterAll,animateCss){
+function beFilter(arr, filterAll,animateCssShow,animateCssHide){
     function show(elem,style){
         elem.style.display = "block";
         if( style ){
@@ -32,10 +32,11 @@ function beFilter(arr, filterAll,animateCss){
     function hide(elem,style){
         if( style ){
             elem.classList.add(style);        
-            elem.style.display = "none";
+           
             setTimeout(()=>{
                 elem.classList.remove(style);
-            },1000)
+                elem.style.display = "none";
+            },100)
         }else{
             elem.style.opacity = "0";
                 elem.style.display = "none";
@@ -73,7 +74,7 @@ function beFilter(arr, filterAll,animateCss){
         let filterAllBtn = document.getElementById(filterAll);
         filterAllBtn.addEventListener('click',(e)=>{
             e.preventDefault()
-            showAll(elements,animateCss)
+            showAll(elements,animateCssShow)
         })
     }
   
@@ -85,10 +86,13 @@ function beFilter(arr, filterAll,animateCss){
             //console.log(e)
             for(let elem of elements){
                 if( elem.id == id ){
-                    hideAll(elements,animateCss);
-                    for(let element of elem.elemsArr){
-                        show(element,animateCss);
-                    }
+                    hideAll(elements,animateCssHide);
+                    setTimeout( ()=>{
+                        for(let element of elem.elemsArr){
+                            show(element,animateCssShow);
+                        }
+                       
+                    } , 100)
                    
                 }
             }
