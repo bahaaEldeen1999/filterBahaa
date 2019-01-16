@@ -9,7 +9,7 @@ HOW IT WORKS :
 ```
 2 - Just call the filter function 
 ```html
-filter( [ ] , ' ' , ' ') : the filter function take 3 parameters : 
+filter( [ ] , ' ' , ' ') : the filter function take 4 parameters : 
 ```
 the first :
 
@@ -24,6 +24,10 @@ is the id of the filter all button which will show everything when it's clicked 
 the third : 
 
 is the animation you want to have on showing the elements , it is OPTIONAL , and to add this parameter you will need to import animate.css to your website
+
+the forth : 
+
+is the animation you want to have on hiding the elements , it is OPTIONAL , and to add this parameter you will need to import animate.css to your website
 
 animate.css cdn: 
 ```html
@@ -43,7 +47,7 @@ ex :
 
 <script>
 
-beFilter( ['filter1','filter2','filter3'] , 'filterAll' , 'fadeIn'  );
+beFilter( ['filter1','filter2','filter3'] , 'filterAll' , 'fadeIn' , 'fadeOut'  );
 
 </script>
 ```
