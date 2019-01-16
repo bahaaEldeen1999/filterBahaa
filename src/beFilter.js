@@ -1,5 +1,5 @@
 
-function filter(arr, filterAll,animateCss){
+function beFilter(arr, filterAll,animateCss){
     function show(elem,style){
         elem.style.display = "block";
         if( style ){
